@@ -29,10 +29,10 @@
 
     <main>
         <div class="main__inputs">
-            <input type="search" name="searchCountries" id="searchCountries" placeholder="Search for a country..." onkeyup="searchCountries('custom', this.value)">
+            <input type="search" name="searchCountries" id="searchCountries" placeholder="Search for a country..." onkeyup="searchCountries('custom', this.value)" title="Country search">
 
             <div class="custom-select">
-                <select name="filterRegion" id="filterRegion">
+                <select name="filterRegion" id="filterRegion" title="Country filter">
                     <option value="title">Filter by Region</option>
                     <option value="default">Default</option>
                     <option value="africa">Africa</option>
@@ -58,7 +58,7 @@
         </div>
 
         <div class="detail__container">
-            <h2 class="container__title"></h2>
+            <h2 class="container__title">No selected</h2>
 
             <div class="container__info01">
                 <p>Native Name: <span class="info__native"></span></p>
