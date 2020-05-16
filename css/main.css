@@ -135,7 +135,6 @@ main {
     -ms-border-radius: 0.3rem;
     -o-border-radius: 0.3rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px;
-    background-image: url(../img/chevron-down-solid.svg);
     background-repeat: no-repeat;
     background-size: 0.8rem;
     background-position: 90%;
@@ -158,11 +157,6 @@ main {
     padding: 0.3rem;
     cursor: pointer;
     user-select: none;
-}
-
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active {
-    background-image: url(../img/chevron-up-solid.svg);
 }
 
 /* Style items (options): */
@@ -248,7 +242,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    /* overflow: scroll; */
+    overflow: scroll;
 }
 
 .detail__button {

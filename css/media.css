@@ -1,0 +1,59 @@
+@media screen and (max-width: 613px) {
+
+    header h1,
+    .header__mode {
+        font-size: 1.1rem;
+    }
+
+    .main__inputs {
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 4rem;
+        width: 100%;
+        padding: 2rem 6% 2rem 6%;
+    }
+
+    .main__inputs input {
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .main__countries {
+        margin-top: 11.2rem;
+    }
+
+    .detail {
+        padding-top: 7rem;
+    }
+
+    .detail__image {
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+
+    .detail__container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container__info01,
+    .container__info02,
+    .container__info03 {
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .container__info03 {
+        margin-bottom: 7rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container__info01 p,
+    .container__info02 p,
+    .container__info03 p {
+        margin-bottom: 0.8rem;
+        width: 100%;
+    }
+}

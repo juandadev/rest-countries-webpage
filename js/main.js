@@ -175,15 +175,24 @@ function searchCountries(condition, name) {
 function changeCSS() {
     var newlink = document.createElement("link");
     newlink.setAttribute("rel", "stylesheet");
-    newlink.setAttribute("type", "text/css");
-    newlink.setAttribute("href", "css/dark.css");
 
-    document.getElementsByTagName('head').item(0).appendChild(newlink);
-    // var oldLink = document.getElementsByTagName('link').item(2).href;
+    if (SwitchMode.classList.contains('dark')) {
+        newlink.setAttribute("href", "css/dark.css");
+        document.getElementsByTagName('head').item(0).replaceChild(newlink, document.getElementsByTagName('link').item(4));
 
-    // if (oldLink.includes('light.css')) {
-    //     oldLink = 'css/dark.css';
-    // } else {
-    //     oldLink = 'css/light.css';
-    // }
+        document.querySelector('.header__mode i').classList.toggle('fa-moon');
+        document.querySelector('.header__mode i').classList.toggle('fa-sun');
+        document.querySelector('.header__mode p').innerText = 'Light Mode';
+
+        SwitchMode.classList.toggle('dark');
+    } else {
+        newlink.setAttribute("href", "css/light.css");
+        document.getElementsByTagName('head').item(0).replaceChild(newlink, document.getElementsByTagName('link').item(4));
+
+        document.querySelector('.header__mode i').classList.toggle('fa-sun');
+        document.querySelector('.header__mode i').classList.toggle('fa-moon');
+        document.querySelector('.header__mode p').innerText = 'Dark Mode';
+
+        SwitchMode.classList.toggle('dark');
+    }
 }
