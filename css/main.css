@@ -277,6 +277,7 @@ main {
     width: 40%;
     min-width: 280px;
     height: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
 }
 
 .detail__image img {
@@ -331,6 +332,8 @@ main {
     -moz-border-radius: 0.2rem;
     -ms-border-radius: 0.2rem;
     -o-border-radius: 0.2rem;
+    user-select: none;
+    cursor: pointer;
 }
 
 /* Countries items */

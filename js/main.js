@@ -40,7 +40,7 @@ function createItem(container, data, id) {
     var item = document.createElement('div');
     item.classList.add('countries__item');
     item.setAttribute('id', id);
-    item.setAttribute('onclick', 'openDetails(this)');
+    item.setAttribute('onclick', 'openDetails(this.id, 0)');
     container.appendChild(item);
 
     var itemImage = document.createElement('div');
@@ -73,36 +73,40 @@ function createSpan(label, content, className, item) {
     item.appendChild(itemP);
 }
 
-function openDetails(item) {
-    document.querySelector('.detail').classList.toggle('hidden');
-    document.querySelector('.detail').classList.toggle('flex');
+function openDetails(item, hide) {
+    if (hide == 0) {
+        document.querySelector('.detail').classList.toggle('hidden');
+        document.querySelector('.detail').classList.toggle('flex');
+    } else if (hide == 1) {
+        item = searchCountries('id', item);
+    }
 
-    detail__image.style.backgroundImage = `url(${countries[item.id].flag})`;
+    detail__image.style.backgroundImage = `url(${countries[item].flag})`;
     detail__image.style.backgroundPosition = 'center center';
     detail__image.style.backgroundRepeat = 'no-repeat';
     detail__image.style.backgroundSize = 'cover';
 
-    container__title.innerText = countries[item.id].name;
-    info__native.innerText = countries[item.id].nativeName;
-    info__population.innerText = countries[item.id].population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    info__region.innerText = countries[item.id].region;
-    info_subRegion.innerText = countries[item.id].subregion;
-    info__capital.innerText = countries[item.id].capital;
-    info__top.innerText = countries[item.id].topLevelDomain;
-    info__currencies.innerText = countries[item.id].currencies[0].name;
+    container__title.innerText = countries[item].name;
+    info__native.innerText = countries[item].nativeName;
+    info__population.innerText = countries[item].population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    info__region.innerText = countries[item].region;
+    info_subRegion.innerText = countries[item].subregion;
+    info__capital.innerText = countries[item].capital;
+    info__top.innerText = countries[item].topLevelDomain;
+    info__currencies.innerText = countries[item].currencies[0].name;
 
     var countryLang = '';
 
-    for (let i = 0; i < countries[item.id].languages.length; i++) {
-        countryLang += `${countries[item.id].languages[i].name}, `;
+    for (let i = 0; i < countries[item].languages.length; i++) {
+        countryLang += `${countries[item].languages[i].name}, `;
     }
 
     info__language.innerText = countryLang.substr(0, countryLang.length - 2);
 
     var countryBorder = [];
 
-    for (let i = 0; i < countries[item.id].borders.length; i++) {
-        countryBorder.push(searchCountries('border', countries[item.id].borders[i]));
+    for (let i = 0; i < countries[item].borders.length; i++) {
+        countryBorder.push(searchCountries('border', countries[item].borders[i]));
     }
 
     borderContainer.innerHTML = '';
@@ -115,6 +119,8 @@ function openDetails(item) {
 
         var borderDiv = document.createElement('span');
         borderDiv.classList.add('border');
+        borderDiv.setAttribute('id', countryBorder[i]);
+        borderDiv.setAttribute('onclick', 'openDetails(this.id, 1)')
         borderDiv.innerText = countryBorder[i];
         borderContainer.appendChild(borderDiv);
     }
@@ -161,6 +167,14 @@ function searchCountries(condition, name) {
                     createItem(container, countries[i], i);
                 } else if (name == 'Default') {
                     createItem(container, countries[i], i);
+                }
+            }
+            break;
+
+        case 'id':
+            for (let i = 0; i < countries.length; i++) {
+                if (countries[i].name == name) {
+                    var border = i;
                 }
             }
             break;
