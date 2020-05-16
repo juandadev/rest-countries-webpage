@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Frontend Mentor | Where in the world?</title>
+</head>
+
+<body>
+    <header>
+        <h1>Where in the world?</h1>
+
+        <div class="header__mode">
+            <i class="fas fa-moon"></i>
+
+            <p>Dark Mode</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="main__inputs">
+            <input type="search" name="searchCountries" id="searchCountries" placeholder="Search for a country..." onkeyup="searchCountries('custom', this.value)">
+
+            <div class="custom-select">
+                <select name="filterRegion" id="filterRegion">
+                    <option value="title">Filter by Region</option>
+                    <option value="default">Default</option>
+                    <option value="africa">Africa</option>
+                    <option value="america">America</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                    <option value="polar">Polar</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="main__countries"></div>
+    </main>
+
+    <div class="detail hidden">
+        <div class="detail__button">
+            <button id="detail__back"><i class="fas fa-arrow-left"></i>Back</button>
+        </div>
+
+        <div class="detail__image">
+            <img src="img/transpa.png" alt="">
+        </div>
+
+        <div class="detail__container">
+            <h2 class="container__title"></h2>
+
+            <div class="container__info01">
+                <p>Native Name: <span class="info__native"></span></p>
+
+                <p>Population: <span class="info__population"></span></p>
+
+                <p>Region: <span class="info__region"></span></p>
+
+                <p>Sub Region: <span class="info_sub-region"></span></p>
+
+                <p>Capital: <span class="info__capital"></span></p>
+            </div>
+
+            <div class="container__info02">
+                <p>Top Level Domain: <span class="info__top"></span></p>
+
+                <p>Currencies: <span class="info__currencies"></span></p>
+
+                <p>Languages: <span class="info__language"></span></p>
+            </div>
+
+            <div class="container__info03">
+                <p>Border Countries:</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://juandamartinez.com/">Juan Daniel Martínez</a>.
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/select.js"></script>
+</body>
+
+</html>
