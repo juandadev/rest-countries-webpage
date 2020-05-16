@@ -1,18 +1,4 @@
 :root {
-    /* Dark Mode Elements */
-    --darkBlue: hsl(209, 23%, 22%);
-    /* Dark Mode Background */
-    --veryDarkBlue: hsl(207, 26%, 17%);
-
-    /* Light Mode Text */
-    --veryDarkBlue: hsl(200, 15%, 8%);
-    /* Light Mode Input */
-    --darkGray: hsl(0, 0%, 52%);
-    /* Light Mode Background */
-    --veryLightGray: hsl(0, 0%, 98%);
-
-    /* Dark Mode Text & Light Mode Elements */
-    --white: hsl(0, 0%, 100%);
     font-size: 14px;
 }
 
@@ -70,7 +56,6 @@ header {
     position: fixed;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    background-color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,7 +87,6 @@ header h1 {
 
 main {
     position: relative;
-    background-color: var(--veryLightGray);
     padding-top: 8rem;
     z-index: 0;
 }
@@ -143,8 +127,6 @@ main {
 
 .select-selected {
     width: 170px;
-    background-color: var(--white);
-    color: var(--darkGray);
     font-weight: 600;
     padding: 1rem 4rem 1rem 1rem;
     border-radius: 0.3rem;
@@ -186,8 +168,6 @@ main {
 /* Style items (options): */
 .select-items {
     position: absolute;
-    background-color: var(--white);
-    color: var(--darkGray);
     font-weight: 600;
     top: 100%;
     left: 0;
@@ -264,7 +244,6 @@ main {
     padding-top: 9rem;
     padding-bottom: 20%;
     top: 0;
-    background-color: var(--veryLightGray);
     z-index: 2;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -284,7 +263,6 @@ main {
     justify-self: flex-start;
     align-self: center;
     padding: 0.5rem 2rem;
-    background-color: var(--white);
     border: none;
     border-radius: 0.3rem;
     -webkit-border-radius: 0.3rem;
@@ -353,7 +331,6 @@ main {
 .container__info03 span {
     padding: 0.4rem 1.6rem;
     margin: 0 0.7rem 0.7rem 0;
-    background-color: var(--white);
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
     border-radius: 0.2rem;
     -webkit-border-radius: 0.2rem;
@@ -368,5 +345,4 @@ footer {
     height: 10vh;
     display: flex;
     align-items: center;
-    background-color: var(--veryLightGray);
 }

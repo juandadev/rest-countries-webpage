@@ -1,0 +1,117 @@
+:root {
+    /* Dark Mode Elements */
+    --darkBlue: hsl(209, 23%, 22%);
+    /* Dark Mode Background */
+    --veryDarkBlue: hsl(207, 26%, 17%);
+
+    /* Light Mode Text */
+    --veryDarkBlue: hsl(200, 15%, 8%);
+    /* Light Mode Input */
+    --darkGray: hsl(0, 0%, 52%);
+    /* Light Mode Background */
+    --veryLightGray: hsl(0, 0%, 98%);
+
+    /* Dark Mode Text & Light Mode Elements */
+    --white: hsl(0, 0%, 100%);
+}
+
+/* Header section */
+
+header {
+    background-color: var(--darkBlue);
+}
+
+header h1 {
+    color: var(--white);
+}
+
+.header__mode {
+    color: var(--white);
+}
+
+/* Main section */
+
+main {
+    background-color: var(--veryDarkBlue);
+}
+
+.main__inputs input {
+    background-color: var(--darkBlue);
+    color: white;
+    background-image: url(../img/search-solid-white.svg);
+}
+
+.main__inputs input::placeholder {
+    color: var(--white);
+}
+
+/* Custom select input */
+
+.select-selected {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+
+/* Style items (options): */
+.select-items {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: var(--veryDarkBlue);
+}
+
+/* Countries */
+
+.countries__item {
+    background-color: var(--darkBlue);
+}
+
+.countries__item h2,
+.countries__item p {
+    color: var(--white);
+}
+
+/* Detail window */
+
+.detail {
+    background-color: var(--veryDarkBlue);
+}
+
+.detail button {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+
+.container__title {
+    color: var(--white);
+}
+
+.container__info01 p span,
+.container__info02 p span,
+.container__info03 span,
+.container__info01 p,
+.container__info02 p,
+.container__info03 p {
+    color: var(--white);
+}
+
+.container__info03 span {
+    background-color: var(--darkBlue);
+}
+
+/* Countries items */
+
+footer {
+    background-color: var(--veryDarkBlue);
+}
+
+footer p {
+    color: var(--white);
+}
+
+footer p a {
+    color: var(--darkGray);
+}

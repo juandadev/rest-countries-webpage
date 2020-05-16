@@ -19,7 +19,7 @@ backHome.addEventListener('click', function () {
 });
 
 SwitchMode.addEventListener('click', function () {
-    changeCSS('hola', 'caca');
+    changeCSS();
 });
 
 fetch("https://restcountries.eu/rest/v2/all")
@@ -172,12 +172,18 @@ function searchCountries(condition, name) {
     return border;
 }
 
-function changeCSS(newFile) {
-    var oldLink = document.getElementsByTagName('link').item(2).href;
+function changeCSS() {
+    var newlink = document.createElement("link");
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", "css/dark.css");
 
-    if (oldLink.includes('light.css')) {
-        oldLink = 'css/dark.css';
-    } else {
-        oldLink = 'css/light.css';
-    }
+    document.getElementsByTagName('head').item(0).appendChild(newlink);
+    // var oldLink = document.getElementsByTagName('link').item(2).href;
+
+    // if (oldLink.includes('light.css')) {
+    //     oldLink = 'css/dark.css';
+    // } else {
+    //     oldLink = 'css/light.css';
+    // }
 }
