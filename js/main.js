@@ -149,9 +149,17 @@ function searchCountries(condition, name) {
 
             for (let i = 0; i < countries.length; i++) {
                 var upperName = countries[i].name.toUpperCase();
+                var upperRegion = countries[i].region;
 
                 if (upperName.includes(`${name.toUpperCase()}`)) {
-                    createItem(container, countries[i], i);
+                    if (document.querySelector('.select-selected').innerHTML != 'Filter by Region') {
+                        if (upperRegion.includes(`${document.querySelector('.select-selected').innerHTML}`)) {
+                            createItem(container, countries[i], i);
+
+                        }
+                    } else {
+                        createItem(container, countries[i], i);
+                    }
                 }
             }
             break;
@@ -162,11 +170,18 @@ function searchCountries(condition, name) {
 
             for (let i = 0; i < countries.length; i++) {
                 var upperRegion = countries[i].region;
+                var upperName = countries[i].name.toUpperCase();
 
-                if (upperRegion.includes(`${name}`) && name != 'Default') {
-                    createItem(container, countries[i], i);
-                } else if (name == 'Default') {
-                    createItem(container, countries[i], i);
+                if (upperRegion.includes(`${name}`) && name != 'Filter by Region') {
+                    console.log(document.getElementById('searchCountries').value);
+                    console.log(upperName);
+                    if (upperName.includes(document.getElementById('searchCountries').value.toString().toUpperCase())) {
+                        createItem(container, countries[i], i);
+                    }
+                } else if (name == 'Filter by Region') {
+                    if (upperName.includes(document.getElementById('searchCountries').value.toString().toUpperCase())) {
+                        createItem(container, countries[i], i);
+                    }
                 }
             }
             break;

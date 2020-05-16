@@ -6,7 +6,7 @@ for (i = 0; i < x.length; i++) {
     /* For each element, create a new DIV that will act as the selected item: */
     a = document.createElement("DIV");
     a.setAttribute("class", "select-selected");
-    a.innerHTML = `<p>${selElmnt.options[selElmnt.selectedIndex].innerHTML}</p>`;
+    a.innerHTML = `${selElmnt.options[selElmnt.selectedIndex].innerHTML}`;
     x[i].appendChild(a);
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
