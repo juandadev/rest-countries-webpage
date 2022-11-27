@@ -22,7 +22,7 @@ SwitchMode.addEventListener('click', function () {
     changeCSS();
 });
 
-fetch("https://restcountries.eu/rest/v2/all")
+fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
     .then((data) => initialize(data))
     .catch((err) => console.log('Error: ' + err));
